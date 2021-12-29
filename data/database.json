@@ -283,6 +283,61 @@
       "balance": 0,
       "createdAt": "2021-12-29T12:14:56.378Z",
       "modifiedAt": "2021-12-29T12:14:56.378Z"
+    },
+    {
+      "id": "sds5K1u1f",
+      "uuid": "0082e257-cb12-4b86-9140-7df773617b98",
+      "firstName": "Loy",
+      "lastName": "Connelly",
+      "username": "Deanna72654",
+      "password": "$2a$10$UV.cYaGNSoJSLRAaDDLE/eiO/dDzcUI2cJK2S5FQ/xUzriT6Rub3G",
+      "balance": 0,
+      "createdAt": "2021-12-29T14:06:33.220Z",
+      "modifiedAt": "2021-12-29T14:06:33.220Z"
+    },
+    {
+      "id": "XYwTkBlcY",
+      "uuid": "04802261-1b46-471f-9d0a-2e631cb69452",
+      "firstName": "Iva",
+      "lastName": "Jaskolski",
+      "username": "Abagail83543",
+      "password": "$2a$10$u8558RKuDfLhq84oQVBQi.KmVYj90Wvrd6VzPg87R4BdsVHsxK/aC",
+      "balance": 0,
+      "createdAt": "2021-12-29T14:10:54.795Z",
+      "modifiedAt": "2021-12-29T14:10:54.796Z"
+    },
+    {
+      "id": "cvBrYvmum",
+      "uuid": "6783ff88-19d7-4f0f-9d2b-ad5f5521c1ac",
+      "firstName": "Alexie",
+      "lastName": "Green",
+      "username": "Wiley69546",
+      "password": "$2a$10$c1.Sm5GzKQp5Tly4sqvkQ.vsHrS/9SDg5lQ5mAhzmkSopJ33jj4jC",
+      "balance": 0,
+      "createdAt": "2021-12-29T14:13:18.446Z",
+      "modifiedAt": "2021-12-29T14:13:18.446Z"
+    },
+    {
+      "id": "Y7ERiZXAr",
+      "uuid": "9e416203-e463-49bf-b6a3-b31ef4c75c99",
+      "firstName": "Gregoria",
+      "lastName": "Hudson",
+      "username": "Jayme42105",
+      "password": "$2a$10$aJORIxzhC/zn1rYxvbXwxuNUBtDu/1IEsoc6enjsJHs7rvJR8/dBm",
+      "balance": 0,
+      "createdAt": "2021-12-29T14:20:31.854Z",
+      "modifiedAt": "2021-12-29T14:20:31.854Z"
+    },
+    {
+      "id": "--XAN7smB",
+      "uuid": "df0edb12-6224-4285-b933-698cbd2bca38",
+      "firstName": "Dimitri",
+      "lastName": "Senger",
+      "username": "Marc14699",
+      "password": "$2a$10$6MDnZxqghY5UGxDJ9znvdO1wlXAhZCTAS0jBLBWW7uBNwOf.ix1h.",
+      "balance": 0,
+      "createdAt": "2021-12-29T14:21:22.428Z",
+      "modifiedAt": "2021-12-29T14:21:22.428Z"
     }
   ],
   "contacts": [

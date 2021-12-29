@@ -6,7 +6,7 @@ describe('Sidebar', () => {
   before(() => {
     sideBar.login();
   });
-
+  
   it('Sidebar has avatar, username, account balance and menu list', () => {
     sideBar.sidebarMenu()
       .should('have.attr', 'data-test', 'sidenav')

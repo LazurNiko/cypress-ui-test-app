@@ -13,7 +13,7 @@ describe("Sign in suite", () => {
 
   let unexcitingUser = {
     username: "Chris",
-    password: "12345Qwert!"
+    password: "12345qwert!"
   }
 
   it('Sign in page has Logo, Sign in title, Sign up link and text form fields', () => {
