@@ -1,5 +1,5 @@
 class signup {
-  validateSignupPage() {
+  hyperlinkSignup() {
     return cy.get("[href='/signup']");
   }
   signUpBtn() {
@@ -19,6 +19,34 @@ class signup {
   }
   formSignUp() {
     return cy.get('[action="#"]');
+  }
+  validateFieldsPlaceholders() {
+    return cy.get('[action="#"]').within(() => {
+            cy.get('fieldset').eq(0).find("span").should("contain", "First Name");
+            cy.get('fieldset').eq(1).find("span").should("contain", "Last Name");
+            cy.get('fieldset').eq(2).find("span").should("contain", "Username");
+            cy.get('fieldset').eq(3).find("span").should("contain", "Password");
+            cy.get('fieldset').eq(4).find("span").should("contain", "Confirm Password");
+          });
+  }
+  validateWarningFieldsMessages() {
+    return cy.get('[action="#"]').within(() => {
+           cy.get('#firstName-helper-text')
+             .should('have.css', 'color', 'rgb(244, 67, 54)')
+             .and("contain", "First Name is required");
+           cy.get('#lastName-helper-text')
+            .should('have.css', 'color', 'rgb(244, 67, 54)')
+            .and("contain", "Last Name is required");
+           cy.get('#username-helper-text')
+            .should('have.css', 'color', 'rgb(244, 67, 54)')
+            .and("contain", "Username is required");
+           cy.get('#password-helper-text')
+            .should('have.css', 'color', 'rgb(244, 67, 54)')
+            .and("contain", "Enter your password");
+           cy.get('#confirmPassword-helper-text')
+            .should('have.css', 'color', 'rgb(244, 67, 54)')
+            .and("contain", "Confirm your password");
+          });
   }
   firstName() {
     return cy.get("#firstName");

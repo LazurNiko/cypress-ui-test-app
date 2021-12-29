@@ -10,7 +10,7 @@ describe("Signup suite", () => {
       user = newUser;
     });
     cy.visit("/");
-    userSignup.validateSignupPage().click();
+    userSignup.hyperlinkSignup().click();
   });
 
   it("Sign up page should have title with logo, 'Sign up' text, 'Sign up' button, First Name, Last Name and text form fields", () => {
@@ -18,14 +18,7 @@ describe("Signup suite", () => {
     userSignup.userAvatar()
     userSignup.signupTitle();
     userSignup.submitBtn().click().should("be.disabled");
-
-    userSignup.formSignUp().within(() => {
-    userSignup.placeholder().eq(0).find("span").should("contain", "First Name");
-    userSignup.placeholder().eq(1).find("span").should("contain", "Last Name");
-    userSignup.placeholder().eq(2).find("span").should("contain", "Username");
-    userSignup.placeholder().eq(3).find("span").should("contain", "Password");
-    userSignup.placeholder().eq(4).find("span").should("contain", "Confirm Password");
-  });
+    userSignup.validateFieldsPlaceholders();
     userSignup.hypertextSignin();
   });
 
@@ -36,13 +29,7 @@ describe("Signup suite", () => {
     userSignup.password().click();
     userSignup.passwordConfirm().click();
     userSignup.submitBtn().should("be.disabled").click({force: true});
-    userSignup.formSignUp().within(() => {
-      userSignup.warningFirstNameMessage().should("contain", "First Name is required");
-      userSignup.warningLastNameMessage().should("contain", "Last Name is required");
-      userSignup.warningUserNameMessage().should("contain", "Username is required");
-      userSignup.warningPasswordMessage().should("contain", "Enter your password");
-      userSignup.warningConfirmPasswordMessage().should("contain", "Confirm your password");
-    });
+    userSignup.validateWarningFieldsMessages();
 });
 
   it("User with password length less then 4 characters shouldn't be able to sign up - page shows warning message", () => {
