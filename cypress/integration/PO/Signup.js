@@ -1,5 +1,5 @@
 class signup {
-  signupPage() {
+  validateSignupPage() {
     return cy.get("[href='/signup']");
   }
   signUpBtn() {
@@ -38,26 +38,32 @@ class signup {
   placeholder() {
     return cy.get('fieldset');
   }
-  helperFirstName() {
+  warningFirstNameMessage() {
     return cy.get('#firstName-helper-text')
   }
-  helperLastName() {
+  warningLastNameMessage() {
     return cy.get('#lastName-helper-text')
   }
-  helperUserName() {
+  warningUserNameMessage() {
     return cy.get('#username-helper-text')
   }
-  helperPassword() {
+  warningPasswordMessage() {
     return cy.get('#password-helper-text');
   }
-  helperPassConf() {
-    return cy.get('#confirmPassword-helper-text')
+  warningPasswordMessage() {
+    return cy.get('#password-helper-text');
+  }
+  warningConfirmPasswordMessage() {
+    return cy.get('#confirmPassword-helper-text');
   }
   hypertextSignin() {
     return cy.get('[href="/signin"]').should("contain", "Have an account? Sign In").and('be.visible');
   }
-  buttonText() {
+  validateButtonText() {
     return cy.get("button.MuiButton-containedPrimary")
+      .should("have.attr", "type", "submit")
+      .and("contain", "Sign Up")
+      .click();
   }
 }
 export default signup;

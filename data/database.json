@@ -74,6 +74,39 @@
       "balance": 75369,
       "createdAt": "2020-02-11T21:26:46.510Z",
       "modifiedAt": "2020-05-21T15:15:33.944Z"
+    },
+    {
+      "id": "aTPT19uXE",
+      "uuid": "e0e52245-2cac-48dc-af33-c94c98bb2206",
+      "firstName": "Bernardo",
+      "lastName": "Hills",
+      "username": "Letha31709",
+      "password": "$2a$10$W6HaFV6SV31nhIessatfkuBovFZerukGwX6lfDhz47LG5pIzVE/We",
+      "balance": 0,
+      "createdAt": "2021-12-29T10:47:52.348Z",
+      "modifiedAt": "2021-12-29T10:47:52.348Z"
+    },
+    {
+      "id": "lDXRMTgrs",
+      "uuid": "3c614da1-359c-4a13-ae46-cb58c876f69e",
+      "firstName": "Jarrett",
+      "lastName": "Bogan",
+      "username": "Amalia13443",
+      "password": "$2a$10$wIS18kjxxOCjUaZ4vHxfdOLwLfvepJgCYN/QsqGI0ULJaRWqnONIO",
+      "balance": 0,
+      "createdAt": "2021-12-29T10:51:19.769Z",
+      "modifiedAt": "2021-12-29T10:51:19.769Z"
+    },
+    {
+      "id": "GTUMgLmOC",
+      "uuid": "967e9657-c206-4231-a549-38618a3a8a6a",
+      "firstName": "Madalyn",
+      "lastName": "Funk",
+      "username": "Kelsi65596",
+      "password": "$2a$10$/c/HL8sfWik2JofBkFJszOApuR54L9.ZYj7TwheDFDJQlGdmJawP2",
+      "balance": 0,
+      "createdAt": "2021-12-29T10:53:27.248Z",
+      "modifiedAt": "2021-12-29T10:53:27.248Z"
     }
   ],
   "contacts": [

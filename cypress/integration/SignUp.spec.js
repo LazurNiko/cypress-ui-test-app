@@ -10,7 +10,7 @@ describe("Signup suite", () => {
       user = newUser;
     });
     cy.visit("/");
-    userSignup.signupPage().click();
+    userSignup.validateSignupPage().click();
   });
 
   it("Sign up page should have title with logo, 'Sign up' text, 'Sign up' button, First Name, Last Name and text form fields", () => {
@@ -37,11 +37,11 @@ describe("Signup suite", () => {
     userSignup.passwordConfirm().click();
     userSignup.submitBtn().should("be.disabled").click({force: true});
     userSignup.formSignUp().within(() => {
-      userSignup.helperFirstName().should("contain", "First Name is required");
-      userSignup.helperLastName().should("contain", "Last Name is required");
-      userSignup.helperUserName().should("contain", "Username is required");
-      userSignup.helperPassword().should("contain", "Enter your password");
-      userSignup.helperPassConf().should("contain", "Confirm your password");
+      userSignup.warningFirstNameMessage().should("contain", "First Name is required");
+      userSignup.warningLastNameMessage().should("contain", "Last Name is required");
+      userSignup.warningUserNameMessage().should("contain", "Username is required");
+      userSignup.warningPasswordMessage().should("contain", "Enter your password");
+      userSignup.warningConfirmPasswordMessage().should("contain", "Confirm your password");
     });
 });
 
@@ -50,7 +50,7 @@ describe("Signup suite", () => {
     userSignup.lastName().type(user.userLastName);
     userSignup.userName().type(user.username);
     userSignup.password().type('1');
-    userSignup.helperPassword().should('contain', 'Password must contain at least 4 characters')
+    userSignup.warningPasswordMessage().should('contain', 'Password must contain at least 4 characters');
     userSignup.submitBtn().should("be.disabled");
   });
 
@@ -60,7 +60,7 @@ describe("Signup suite", () => {
     userSignup.userName().type(user.username);
     userSignup.password().type(user.password);
     userSignup.passwordConfirm().type("123456qwert!");
-    userSignup.helperPassConf().should('contain', 'Password does not match')
+    userSignup.warningConfirmPasswordMessage().should('contain', 'Password does not match')
     userSignup.submitBtn().should("be.disabled");
   });
 
@@ -71,9 +71,6 @@ describe("Signup suite", () => {
     userSignup.password().type(user.password);
     userSignup.passwordConfirm().type(user.passwordConfirm);
     userSignup.submitBtn().should("not.be.disabled");
-    userSignup.buttonText()
-      .should("have.attr", "type", "submit")
-      .and("contain", "Sign Up")
-      .click();
+    userSignup.validateButtonText();
   });
 });

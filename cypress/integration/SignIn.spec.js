@@ -21,9 +21,7 @@ describe("Sign in suite", () => {
     signIn.placeholderUsername();
     signIn.placeholderPassword();
     signIn.hypertextSignUp();
-    signIn.loginBtn()
-          .find(".MuiButton-label")
-          .should("contain", "Sign In");;
+    signIn.loginBtn().find(".MuiButton-label").should("contain", "Sign In");;
   });
 
   it(`User can't login with blank username field - page shows message "Username is required"`, () => {
