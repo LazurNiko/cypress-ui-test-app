@@ -14,9 +14,9 @@ describe("Signup suite", () => {
   });
 
   it("Sign up page should have title with logo, 'Sign up' text, 'Sign up' button, First Name, Last Name and text form fields", () => {
-    userSignup.signupUrl().should("include", "/signup");
-    userSignup.userAvatar().should("have.attr", "xmlns", "http://www.w3.org/2000/svg").and("be.visible");
-    userSignup.signupTitle().should("have.attr", "data-test", "signup-title").and("contain", "Sign Up");
+    userSignup.signupUrl();
+    userSignup.userAvatar()
+    userSignup.signupTitle();
     userSignup.submitBtn().click().should("be.disabled");
 
     userSignup.formSignUp().within(() => {
@@ -26,7 +26,7 @@ describe("Signup suite", () => {
     userSignup.placeholder().eq(3).find("span").should("contain", "Password");
     userSignup.placeholder().eq(4).find("span").should("contain", "Confirm Password");
   });
-    userSignup.hypertextSignin().should("contain", "Have an account? Sign In");
+    userSignup.hypertextSignin();
   });
 
   it(`User can't sign up with blank fields - page shows messages for blank field`, () => {

@@ -6,13 +6,13 @@ class signup {
     return cy.get('[href="https://www.usertesting.com/plans"]');
   }
   signupUrl() {
-    return cy.url();
+    return cy.url().should("include", "/signup");;
   }
   userAvatar() {
-    return cy.get("svg");
+    return cy.get("svg").should("have.attr", "xmlns", "http://www.w3.org/2000/svg").and("be.visible");;
   }
   signupTitle() {
-    return cy.get('[data-test="signup-title"]');
+    return cy.get('[data-test="signup-title"]').should("have.attr", "data-test", "signup-title").and("contain", "Sign Up");;
   }
   submitBtn() {
     return cy.get('[data-test="signup-submit"]');
@@ -54,7 +54,7 @@ class signup {
     return cy.get('#confirmPassword-helper-text')
   }
   hypertextSignin() {
-    return cy.get('[href="/signin"]');
+    return cy.get('[href="/signin"]').should("contain", "Have an account? Sign In").and('be.visible');
   }
   buttonText() {
     return cy.get("button.MuiButton-containedPrimary")
