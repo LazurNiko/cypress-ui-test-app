@@ -272,6 +272,17 @@
       "balance": 0,
       "createdAt": "2021-12-29T12:07:09.244Z",
       "modifiedAt": "2021-12-29T12:07:09.244Z"
+    },
+    {
+      "id": "9xFqM5Rt7",
+      "uuid": "659eb1a1-a278-4797-ba90-0166a74186ff",
+      "firstName": "John",
+      "lastName": "Gates",
+      "username": "Snow",
+      "password": "$2a$10$wbLkAvq27mkSoahbbk7WiOuP4XsYBZ5rLPAwAQ1mOcVkngd3YCshG",
+      "balance": 0,
+      "createdAt": "2021-12-29T12:14:56.378Z",
+      "modifiedAt": "2021-12-29T12:14:56.378Z"
     }
   ],
   "contacts": [
@@ -451,6 +462,17 @@
       "isDeleted": false,
       "createdAt": "2019-09-30T14:20:07.043Z",
       "modifiedAt": "2020-05-21T22:40:28.910Z"
+    },
+    {
+      "id": "1f5E2iTiC",
+      "uuid": "ba4bbe34-6469-4412-833f-8d2a7f6ff6e7",
+      "userId": "9xFqM5Rt7",
+      "bankName": "t6t6t6t",
+      "accountNumber": "6767676776",
+      "routingNumber": "555555555",
+      "isDeleted": false,
+      "createdAt": "2021-12-29T12:15:21.895Z",
+      "modifiedAt": "2021-12-29T12:15:21.895Z"
     }
   ],
   "transactions": [
