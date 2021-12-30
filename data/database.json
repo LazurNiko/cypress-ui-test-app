@@ -11,7 +11,7 @@
       "phoneNumber": "625-316-9882",
       "avatar": "https://cypress-realworld-app-svgs.s3.amazonaws.com/t45AiwidW.svg",
       "defaultPrivacyLevel": "public",
-      "balance": 552337,
+      "balance": 562337,
       "createdAt": "2019-08-27T23:47:05.637Z",
       "modifiedAt": "2020-05-21T11:02:22.857Z"
     },
@@ -10053,6 +10053,17 @@
       "status": "complete",
       "createdAt": "2021-12-30T12:41:52.652Z",
       "modifiedAt": "2021-12-30T12:41:52.652Z"
+    },
+    {
+      "id": "6iuvIRX_o",
+      "uuid": "e98e5a47-97be-4939-89a8-de6c9b002c2a",
+      "amount": 10000,
+      "description": "any text",
+      "receiverId": "t45AiwidW",
+      "senderId": "A1q12w2q8",
+      "status": "complete",
+      "createdAt": "2021-12-30T13:06:32.460Z",
+      "modifiedAt": "2021-12-30T13:06:32.460Z"
     }
   ],
   "likes": [
@@ -10779,6 +10790,16 @@
       "isRead": false,
       "createdAt": "2021-12-30T12:41:52.744Z",
       "modifiedAt": "2021-12-30T12:41:52.744Z"
+    },
+    {
+      "id": "9Xe-o5XOjJ",
+      "uuid": "a897b11f-5727-48c9-a260-98eaf6492603",
+      "userId": "t45AiwidW",
+      "transactionId": "6iuvIRX_o",
+      "status": "received",
+      "isRead": false,
+      "createdAt": "2021-12-30T13:06:32.581Z",
+      "modifiedAt": "2021-12-30T13:06:32.581Z"
     }
   ],
   "banktransfers": [
@@ -11481,6 +11502,16 @@
       "type": "withdrawal",
       "createdAt": "2021-12-30T12:41:52.691Z",
       "modifiedAt": "2021-12-30T12:41:52.691Z"
+    },
+    {
+      "id": "Qcst3W-Eqm",
+      "uuid": "3225abab-84ff-4658-ab50-0859c1826cda",
+      "userId": "A1q12w2q8",
+      "amount": 10000,
+      "transactionId": "6iuvIRX_o",
+      "type": "withdrawal",
+      "createdAt": "2021-12-30T13:06:32.496Z",
+      "modifiedAt": "2021-12-30T13:06:32.496Z"
     }
   ]
 }

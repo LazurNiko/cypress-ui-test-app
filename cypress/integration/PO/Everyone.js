@@ -60,13 +60,13 @@ class everyone {
       return cy.get('[data-test="user-list-item-t45AiwidW"]').find('span.MuiListItemText-primary').should('contain', 'Edgar Johns').click({force: true});
     }
     validateButton() {
-      cy.get('[data-test="transaction-create-submit-payment"]')
+      return cy.get('[data-test="transaction-create-submit-payment"]');
     }
     typeAmount() {
-      cy.get('[placeholder="Amount"]').type('100');
+      return cy.get('[placeholder="Amount"]').type('100');
     }
     typeAddANote() {
-      cy.get('[placeholder="Add a note"]').type('any text');
+      return cy.get('[placeholder="Add a note"]').type('any text');
     }
     validateUserCredentials() {
       cy.get('img').should('have.attr', 'src', 'https://cypress-realworld-app-svgs.s3.amazonaws.com/t45AiwidW.svg')
