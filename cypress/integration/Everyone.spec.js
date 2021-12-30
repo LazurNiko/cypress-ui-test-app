@@ -12,6 +12,8 @@ describe('Everyone', () => {
     Everyone.logo();
     Everyone.transactionButtonTop();
     Everyone.notificationBell();
+    Everyone.burgerMenuButton();
+    Everyone.pageTitle();
     Everyone.mainPageLinks();
     Everyone.usersList();
     Everyone.userComponents();

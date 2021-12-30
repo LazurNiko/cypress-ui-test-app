@@ -14,6 +14,12 @@ class everyone {
     notificationBell() {
       return cy.get(".MuiBadge-root").should('have.attr', 'data-test', 'nav-top-notifications-count').find("path")
     }
+    pageTitle () {
+      return cy.get('.MuiListSubheader-sticky').should('contain', 'Public');
+    }
+    burgerMenuButton() {
+      return cy.get('[data-test="drawer-icon"]').should('be.visible')
+    }   
     mainPageLinks() {
       return cy.get('.MuiTabs-centered').within(() => {
                 cy.get(".MuiTab-wrapper").eq(0).should("contain", "Everyone");

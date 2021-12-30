@@ -1,12 +1,12 @@
-class friends {
+class mine {
     login() {
-      cy.visit('/signin');
-      cy.get("#username").type('Snow');
-      cy.get("#password").type('12345Qwert!');
-      cy.get('[data-test="signin-submit"]').click();
-    }
-    friendsLink() {
-        cy.get('[href="/contacts"]').click();
+        cy.visit('/signin');
+        cy.get("#username").type('Snow');
+        cy.get("#password").type('12345Qwert!');
+        cy.get('[data-test="signin-submit"]').click();
+      }
+    mineLink() {
+        cy.get('[href="/personal"]').click();
     }
     logo() {
       return cy.get('[xmlns="http://www.w3.org/2000/svg"]').should("be.visible");
@@ -21,8 +21,8 @@ class friends {
         return cy.get(".MuiBadge-root").should('have.attr', 'data-test', 'nav-top-notifications-count').find("path")
     }
     burgerMenuButton() {
-      return cy.get('[data-test="drawer-icon"]').should('be.visible')
-    }   
+        return cy.get('[data-test="drawer-icon"]').should('be.visible')
+      }   
     mainPageLinks(){
         return cy.get('.MuiTabs-centered').within(() => {
               cy.get(".MuiButtonBase-root").eq(0).should('have.attr', 'href', '/').and("contain", "Everyone");
@@ -31,7 +31,7 @@ class friends {
         })
     }
     pageTitle () {
-      return cy.get('.MuiListSubheader-sticky').should('contain', 'Contacts');
+      return cy.get('.MuiListSubheader-sticky').should('contain', 'Personal');
     }    
     pageBody() {
         return cy.get('[data-test="empty-list-header"]')
@@ -50,5 +50,6 @@ class friends {
         return cy.get('[data-test="transaction-list-filter-amount-range-button"]')
         .contains('Amount: $0 - $1,000');
     }
+
 }
-export default friends;
+export default mine;
