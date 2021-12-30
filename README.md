@@ -457,7 +457,7 @@
 > 
 > 3. 'Transaction page' opens - In field 'Account' type '100'
 > 
-> 4. In field 'Add note' type any text
+> 4. In field 'Add note' type 'any text'
 > 
 > 3. Click on [REQUEST] button
 > 

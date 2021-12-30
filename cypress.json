@@ -6,9 +6,9 @@
     "Sidebar.spec.js",
     "Everyone.spec.js",
     "Friends.spec.js",
+    "Mine.spec.js",
     "CalendarFilter.spec.js",
-    "AmountRangeFilter.spec.js",
-    "Mine.spec.js"
+    "AmountRangeFilter.spec.js"
   ],
   "ignoreTestFiles": [
     "**/1-getting-started/*.js",
