@@ -5,9 +5,6 @@ class mine {
         cy.get("#password").type('12345Qwert!');
         cy.get('[data-test="signin-submit"]').click();
       }
-    mineLink() {
-        cy.get('[href="/personal"]').click()
-    }
     logo() {
       return cy.get('[xmlns="http://www.w3.org/2000/svg"]')
     }

@@ -6,14 +6,12 @@ describe('Everyone', () => {
 
   beforeEach(() => {
     Everyone.login();
-    // cy.visit('/')
     // cy.intercept('POST', '/login', {
-    //   fixture: 'loginResponse.json'
-    // })
+    //   fixture: "loginResponse.json"
+    // }).as('userLogin')
   });
 
   it('"Everyone" page has logo, [New] "button, pages links, bell icon, users list and filter fields', () => {
-    
     Everyone.logo().should("be.visible");
     Everyone.transactionButtonTop().should('be.visible').and("contain", " New");
     Everyone.notificationBell().should('be.visible').should("have.attr", "href", '/notifications');
@@ -28,10 +26,11 @@ describe('Everyone', () => {
     Everyone.amountRangeFilter().contains('Amount: $0 - $1,000');
   });
 
-  it('User not be able to create payment request if account balance is "$0.00', () => {
+  it.only('User not be able to create payment request if account balance is "$0.00', () => {
     Everyone.userBalance().should('contain', '$0.00');
     Everyone.transactionButtonTop().click();
     Everyone.selectUser()
+          .scrollIntoView()
           .find('span.MuiListItemText-primary')
           .should('contain', 'Edgar Johns')
           .click({force: true});

@@ -17,7 +17,7 @@ describe("Signup suite", () => {
     userSignup.signupUrl().should("include", "/signup");
     userSignup.userAvatar().should("have.attr", "xmlns", "http://www.w3.org/2000/svg").and("be.visible");
     userSignup.signupTitle().should("have.attr", "data-test", "signup-title").and("contain", "Sign Up");
-    userSignup.submitBtn().click().should("be.disabled");
+    cy.clickButton(userSignup.submitBtn()).should("be.disabled");
     userSignup.fieldsPlaceholders();
     userSignup.hypertextSignin().should("contain", "Have an account? Sign In").and('be.visible');
   });
@@ -65,16 +65,15 @@ describe("Signup suite", () => {
     userSignup.submitBtn().should("be.disabled");
   });
 
-  it("User should have an ability to create a new account", () => {
+  it.only("User should have an ability to create a new account", () => {
     userSignup.firstName().type(user.userFirstName);
     userSignup.lastName().type(user.userLastName);
     userSignup.userName().type(user.username);
     userSignup.password().type(user.password);
     userSignup.passwordConfirm().type(user.passwordConfirm);
     userSignup.submitBtn().should("not.be.disabled");
-    userSignup.signUpButtonText()
+    cy.clickButton(userSignup.signUpButtonText())
               .should("have.attr", "type", "submit")
               .and("contain", "Sign Up")
-              .click();;
   });
 });

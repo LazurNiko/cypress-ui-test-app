@@ -11,7 +11,7 @@
       "phoneNumber": "625-316-9882",
       "avatar": "https://cypress-realworld-app-svgs.s3.amazonaws.com/t45AiwidW.svg",
       "defaultPrivacyLevel": "public",
-      "balance": 191437,
+      "balance": 201437,
       "createdAt": "2019-08-27T23:47:05.637Z",
       "modifiedAt": "2020-05-21T11:02:22.857Z"
     },
@@ -129,6 +129,39 @@
       "balance": 0,
       "createdAt": "2022-01-04T13:38:20.449Z",
       "modifiedAt": "2022-01-04T13:38:20.449Z"
+    },
+    {
+      "id": "PaEvhIcLe",
+      "uuid": "e8240a96-124d-4ac0-a8c9-ffd1e848590e",
+      "firstName": "Fernando",
+      "lastName": "Schiller",
+      "username": "Flossie28213",
+      "password": "$2a$10$iWQVCmCGCvr/DJvHu15GeOrW.hMdFzggyC3yARN/C0dWpd0eJCQgS",
+      "balance": 0,
+      "createdAt": "2022-01-04T18:30:16.200Z",
+      "modifiedAt": "2022-01-04T18:30:16.200Z"
+    },
+    {
+      "id": "HLbmg9DiQ",
+      "uuid": "52de1b1e-500a-4147-85c2-524c919f9b91",
+      "firstName": "Malvina",
+      "lastName": "Walker",
+      "username": "Lura36255",
+      "password": "$2a$10$aMRriIVMZ.ihtPtky0IL1.ug.Myhdu5bRvmIqmxNNHHie9F5Ev1XO",
+      "balance": 0,
+      "createdAt": "2022-01-04T18:33:41.875Z",
+      "modifiedAt": "2022-01-04T18:33:41.875Z"
+    },
+    {
+      "id": "l5b-PtCTq",
+      "uuid": "fc7123f7-affa-4139-9e23-2b1aef82a31c",
+      "firstName": "Dianna",
+      "lastName": "Tromp",
+      "username": "Alexis18087",
+      "password": "$2a$10$Oybc2qrr05oye4Hv2cfg6.ndtOtyjitJUJlUoOnrC4n1yXSXaMUJ6",
+      "balance": 0,
+      "createdAt": "2022-01-04T18:36:50.865Z",
+      "modifiedAt": "2022-01-04T18:36:50.865Z"
     }
   ],
   "contacts": [
@@ -9954,6 +9987,17 @@
       "status": "complete",
       "createdAt": "2022-01-04T16:00:29.464Z",
       "modifiedAt": "2022-01-04T16:00:29.464Z"
+    },
+    {
+      "id": "i30stLejH",
+      "uuid": "f24edc28-0004-4467-afb3-fb319302be7b",
+      "amount": 10000,
+      "description": "any text",
+      "receiverId": "t45AiwidW",
+      "senderId": "pkIhJ-MP8",
+      "status": "complete",
+      "createdAt": "2022-01-04T19:11:39.991Z",
+      "modifiedAt": "2022-01-04T19:11:39.991Z"
     }
   ],
   "likes": [
@@ -10560,6 +10604,16 @@
       "isRead": false,
       "createdAt": "2022-01-04T16:00:29.506Z",
       "modifiedAt": "2022-01-04T16:00:29.506Z"
+    },
+    {
+      "id": "y6BFuIE2e",
+      "uuid": "523e67fc-fc8f-4c48-b043-4a4e15411edc",
+      "userId": "t45AiwidW",
+      "transactionId": "i30stLejH",
+      "status": "received",
+      "isRead": false,
+      "createdAt": "2022-01-04T19:11:40.087Z",
+      "modifiedAt": "2022-01-04T19:11:40.087Z"
     }
   ],
   "banktransfers": [
@@ -11142,6 +11196,16 @@
       "type": "withdrawal",
       "createdAt": "2022-01-04T16:00:29.481Z",
       "modifiedAt": "2022-01-04T16:00:29.481Z"
+    },
+    {
+      "id": "Oockxa13x0",
+      "uuid": "5ba80b8a-0579-469f-8950-09ef0932df58",
+      "userId": "pkIhJ-MP8",
+      "amount": 10000,
+      "transactionId": "i30stLejH",
+      "type": "withdrawal",
+      "createdAt": "2022-01-04T19:11:40.051Z",
+      "modifiedAt": "2022-01-04T19:11:40.051Z"
     }
   ]
 }

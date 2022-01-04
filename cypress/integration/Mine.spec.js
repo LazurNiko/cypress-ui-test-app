@@ -5,7 +5,7 @@ const minePage = new mine();
 
 before(() => {
     minePage.login();
-    minePage.mineLink()
+    minePage.mainPageMineLink().click();
 });
 
     it('"Mine" page has logo, [Create a Transaction] button, pages links, bell icon, users list and filter fields', () => {
