@@ -6,11 +6,10 @@ class range {
       cy.get('[data-test="signin-submit"]').click();
     }
     amountRangeButton() {
-      return cy.get('[data-test="transaction-list-filter-amount-range-button"]').contains('Amount: $0 - $1,000').click({force: true});
+      return cy.get('[data-test="transaction-list-filter-amount-range-button"]')
     }
     amountRangeButtonText() {
-      cy.get('[data-test="transaction-list-filter-amount-range-text"]')
-          .should('be.visible');
+      cy.get('[data-test="transaction-list-filter-amount-range-text"]')  
     }
     amountRangeSetValue() {
       cy.get('[data-test="transaction-list-filter-amount-range-slider"]')

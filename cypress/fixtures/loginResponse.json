@@ -1,0 +1,13 @@
+{
+    "user": {
+        "id": "pkIhJ-MP8",
+        "uuid": "ac3963c7-4106-470d-aba3-0946a91bce6f",
+        "firstName": "John",
+        "lastName": "Gates",
+        "username": "Snow",
+        "password": "$2a$10$VSQAsCuK.Vreq8E40setAuw.akr8xu0Cd0sXTSeGZHXEFEB2gv9Rm",
+        "balance": 0,
+        "createdAt": "2022-01-04T08:25:34.257Z",
+        "modifiedAt": "2022-01-04T08:25:34.257Z"
+    }
+}

@@ -9,7 +9,7 @@ before(() => {
 
     it('User can view filtered transactions by data, by setting values in data field', () => {
         Calendar.calendarButton();
-        Calendar.calendarModalWindow();
+        Calendar.calendarModalWindow().should('be.visible');
         Calendar.setDate();
         Calendar.validateDate();
     })

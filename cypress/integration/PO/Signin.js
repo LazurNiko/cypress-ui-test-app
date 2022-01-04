@@ -3,13 +3,13 @@ class signin {
         return cy.get('[data-test="signin-submit"]');
       }
       logo() {
-        return cy.get("svg").should("have.attr", "xmlns", "http://www.w3.org/2000/svg").and("be.visible");
+        return cy.get("svg")
       }
       placeholderUsername() {
-        return cy.get("#username-label").should("contain", "Username");
+        return cy.get("#username-label")
       }
       placeholderPassword() {
-        return cy.get("#password-label").should("contain", "Password");
+        return cy.get("#password-label")
       }
       userName() {
         return cy.get("#username");
@@ -17,29 +17,20 @@ class signin {
       password() {
         return cy.get("#password");
       }
+      checkboxText() {
+        return cy.get(".MuiFormControlLabel-root")
+      }
       checkbox() {
-        cy.contains(".MuiFormControlLabel-root", "Remember me")
-          .find(".PrivateSwitchBase-input-14")
-          .should('be.not.checked');
-        cy.get(".PrivateSwitchBase-input-14")
-          .check()
-          .should('be.checked')
-          .uncheck()
-          .should("not.be.checked");
+        return cy.get(".PrivateSwitchBase-input-14") 
       }
       errorMessage() {
           return cy.get("#username-helper-text")
-            .should("contain", "Username is required");
       }
       alertMessage() {
         return cy.get('.MuiAlert-message')
-          .should('contain', 'Username or password is invalid')
-          .and('be.visible');
       }
       hypertextSignUp() {
         return cy.get('[data-test="signup"]')
-          .should("have.attr", "href", "/signup")
-          .and("contain", "Don't have an account? Sign Up");
       }
 }
 export default signin;

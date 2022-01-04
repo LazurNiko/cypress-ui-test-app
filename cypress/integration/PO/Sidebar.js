@@ -9,19 +9,19 @@ class sidebar {
     return cy.get('.MuiDrawer-root.MuiDrawer-docked');
   }
   avatar() {
-    return cy.get('.MuiSvgIcon-root.MuiAvatar-fallback').should('be.visible');
+    return cy.get('.MuiSvgIcon-root.MuiAvatar-fallback')
   }
   username() {
-    return cy.get('[data-test="sidenav-user-full-name"]').should('contain', 'John');
+    return cy.get('[data-test="sidenav-user-full-name"]')
   }
   userFirstName() {
-    return cy.get('[data-test="sidenav-username"]').should('contain', 'Snow');
+    return cy.get('[data-test="sidenav-username"]')
   }
   accountBalanceAmount() {
-    return cy.get('[data-test="sidenav-user-balance"]').should('contain', '$0.00');
+    return cy.get('[data-test="sidenav-user-balance"]')
   }
   accountBalanceTitle() {
-    return cy.get('h6.MuiTypography-subtitle2').eq(1).should('contain', 'Account Balance');
+    return cy.get('h6.MuiTypography-subtitle2').eq(1)
   }
   homeIcon() {
     return cy.get('.MuiListItemIcon-root').eq(0).find('svg');
@@ -39,19 +39,19 @@ class sidebar {
     return cy.get('.MuiListItemIcon-root').eq(4).find('svg');
   }
   homeLink() {
-    return cy.get('[data-test="sidenav-home"]').should('have.attr', 'href', '/').and('be.visible');
+    return cy.get('[data-test="sidenav-home"]')
   }
   myAccountLink() {
-    return cy.get('[data-test="sidenav-user-settings"]').should('have.attr', 'href', '/user/settings').and('be.visible');
+    return cy.get('[data-test="sidenav-user-settings"]')
   }
   bankAccountsLink() {
-    return cy.get('[data-test="sidenav-bankaccounts"]').should('have.attr', 'href', '/bankaccounts').and('be.visible');
+    return cy.get('[data-test="sidenav-bankaccounts"]')
   }
   notificationsLink() {
-    return cy.get('[data-test="sidenav-notifications"]').should('have.attr', 'href', '/notifications').and('be.visible');
+    return cy.get('[data-test="sidenav-notifications"]')
   }
   logoutLink() {
-    return cy.get('[data-test="sidenav-signout"]').should('be.visible').contains('Logout');
+    return cy.get('[data-test="sidenav-signout"]')
   }
 }
 export default sidebar;

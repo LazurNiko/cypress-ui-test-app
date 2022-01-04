@@ -6,13 +6,13 @@ class signup {
     return cy.get('[href="https://www.usertesting.com/plans"]');
   }
   signupUrl() {
-    return cy.url().should("include", "/signup");;
+    return cy.url()
   }
   userAvatar() {
-    return cy.get("svg").should("have.attr", "xmlns", "http://www.w3.org/2000/svg").and("be.visible");;
+    return cy.get("svg")
   }
   signupTitle() {
-    return cy.get('[data-test="signup-title"]').should("have.attr", "data-test", "signup-title").and("contain", "Sign Up");;
+    return cy.get('[data-test="signup-title"]')
   }
   submitBtn() {
     return cy.get('[data-test="signup-submit"]');
@@ -20,7 +20,7 @@ class signup {
   formSignUp() {
     return cy.get('[action="#"]');
   }
-  validateFieldsPlaceholders() {
+  fieldsPlaceholders() {
     return cy.get('[action="#"]').within(() => {
             cy.get('fieldset').eq(0).find("span").should("contain", "First Name");
             cy.get('fieldset').eq(1).find("span").should("contain", "Last Name");
@@ -29,25 +29,21 @@ class signup {
             cy.get('fieldset').eq(4).find("span").should("contain", "Confirm Password");
           });
   }
-  validateWarningFieldsMessages() {
-    return cy.get('[action="#"]').within(() => {
-           cy.get('#firstName-helper-text')
-             .should('have.css', 'color', 'rgb(244, 67, 54)')
-             .and("contain", "First Name is required");
-           cy.get('#lastName-helper-text')
-            .should('have.css', 'color', 'rgb(244, 67, 54)')
-            .and("contain", "Last Name is required");
-           cy.get('#username-helper-text')
-            .should('have.css', 'color', 'rgb(244, 67, 54)')
-            .and("contain", "Username is required");
-           cy.get('#password-helper-text')
-            .should('have.css', 'color', 'rgb(244, 67, 54)')
-            .and("contain", "Enter your password");
-           cy.get('#confirmPassword-helper-text')
-            .should('have.css', 'color', 'rgb(244, 67, 54)')
-            .and("contain", "Confirm your password");
-          });
-  }
+  warningFirstNameFieldMessage() {
+      return cy.get('#firstName-helper-text')
+  };
+  warningLastNameFieldMessage() {
+      return cy.get('#lastName-helper-text')
+  };
+  warningUserNameFieldMessage() {
+      return cy.get('#username-helper-text')
+  };
+  warningPasswordFieldMessage() {
+      return cy.get('#password-helper-text')
+  };
+  warningConfirmPasswordFieldMessage() {
+      return cy.get('#confirmPassword-helper-text')
+  };
   firstName() {
     return cy.get("#firstName");
   }
@@ -85,13 +81,10 @@ class signup {
     return cy.get('#confirmPassword-helper-text');
   }
   hypertextSignin() {
-    return cy.get('[href="/signin"]').should("contain", "Have an account? Sign In").and('be.visible');
+    return cy.get('[href="/signin"]')
   }
-  validateButtonText() {
+  signUpButtonText() {
     return cy.get("button.MuiButton-containedPrimary")
-      .should("have.attr", "type", "submit")
-      .and("contain", "Sign Up")
-      .click();
   }
 }
 export default signup;

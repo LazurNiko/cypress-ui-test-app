@@ -9,46 +9,46 @@ class friends {
         cy.get('[href="/contacts"]').click();
     }
     logo() {
-      return cy.get('[xmlns="http://www.w3.org/2000/svg"]').should("be.visible");
+      return cy.get('[xmlns="http://www.w3.org/2000/svg"]')
     }
     transactionButtonTop() {
-      return cy.get('[data-test="nav-top-new-transaction"]').should('be.visible').and("contain", " New");
+      return cy.get('[data-test="nav-top-new-transaction"]')
     }
     transactionButtonTop() {
-        return cy.get('[data-test="nav-top-new-transaction"]').should('be.visible').and("contain", " New");
+        return cy.get('[data-test="nav-top-new-transaction"]')
       }
     notificationBell(){
-        return cy.get(".MuiBadge-root").should('have.attr', 'data-test', 'nav-top-notifications-count').find("path")
+        return cy.get('[data-test="nav-top-notifications-link"]')
     }
     burgerMenuButton() {
-      return cy.get('[data-test="drawer-icon"]').should('be.visible')
+      return cy.get('[data-test="sidenav-toggle"]')
     }   
-    mainPageLinks(){
-        return cy.get('.MuiTabs-centered').within(() => {
-              cy.get(".MuiButtonBase-root").eq(0).should('have.attr', 'href', '/').and("contain", "Everyone");
-              cy.get(".MuiButtonBase-root").eq(1).should('have.attr', 'href', '/contacts').and("contain", "Friends");
-              cy.get(".MuiButtonBase-root").eq(2).should('have.attr', 'href', '/personal').and("contain", "Mine");
-        })
+    mainPageEveryoneLink(){
+      return cy.get('[data-test="nav-public-tab"]')
+    }
+    mainPageFriendsLink() {
+      return cy.get('[data-test="nav-contacts-tab"]')
+    }
+    mainPageMineLink() {
+      return cy.get('[data-test="nav-personal-tab"]')
     }
     pageTitle () {
-      return cy.get('.MuiListSubheader-sticky').should('contain', 'Contacts');
+      return cy.get('.MuiListSubheader-sticky')
     }    
     pageBody() {
-        return cy.get('[data-test="empty-list-header"]')
-        .contains("No Transactions");
+      return cy.get('[data-test="empty-list-header"]')
+        
     }
     transactionButton() {
         return cy.contains('[data-test="transaction-list-empty-create-transaction-button"]', 'Create A Transaction')
-             .should('have.attr', 'href', '/transaction/new')
-             .and('exist')
     }
     calendarFilter() {
         return cy.get('[data-test="transaction-list-filter-date-range-button"]')
-        .contains('span', 'Date: ALL');
+        
     }
     amountRangeFilter() {
         return cy.get('[data-test="transaction-list-filter-amount-range-button"]')
-        .contains('Amount: $0 - $1,000');
+        
     }
 }
 export default friends;

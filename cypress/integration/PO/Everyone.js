@@ -6,26 +6,28 @@ class everyone {
       cy.get('[data-test="signin-submit"]').click();
     }
     logo() {
-      return cy.get('[xmlns="http://www.w3.org/2000/svg"]').should("be.visible");
+      return cy.get('[xmlns="http://www.w3.org/2000/svg"]')
     }
     transactionButtonTop() {
-      return cy.get('[data-test="nav-top-new-transaction"]').should('be.visible').and("contain", " New");
+      return cy.get('[data-test="nav-top-new-transaction"]');
     }
     notificationBell() {
-      return cy.get(".MuiBadge-root").should('have.attr', 'data-test', 'nav-top-notifications-count').find("path")
+      return cy.get('[data-test="nav-top-notifications-link"]')
     }
     pageTitle () {
-      return cy.get('.MuiListSubheader-sticky').should('contain', 'Public');
+      return cy.get('.MuiListSubheader-sticky')
     }
     burgerMenuButton() {
-      return cy.get('[data-test="drawer-icon"]').should('be.visible')
+      return cy.get('[data-test="sidenav-toggle"]').should('be.visible')
     }   
-    mainPageLinks() {
-      return cy.get('.MuiTabs-centered').within(() => {
-                cy.get(".MuiTab-wrapper").eq(0).should("contain", "Everyone");
-                cy.get(".MuiTab-wrapper").eq(1).should("contain", "Friends");
-                cy.get(".MuiTab-wrapper").eq(2).should("contain", "Mine");
-            });
+    mainPageEveryoneLink() {
+      return cy.get('[data-test="nav-public-tab"]')
+    }
+    mainPageFriendsLink() {
+      return cy.get('[data-test="nav-contacts-tab"]')
+    }
+    mainPageMineLink() {
+      return cy.get('[data-test="nav-personal-tab"]')
     }
     usersList() {
       return cy.get('.ReactVirtualized__Grid__innerScrollContainer').should('have.attr', 'role', 'rowgroup').within(() => {
@@ -50,45 +52,38 @@ class everyone {
     }
     calendarFilter() {
       return cy.get('[data-test="transaction-list-filter-date-range-button"]')
-               .contains('span', 'Date: ALL')
     }
     amountRangeFilter() {
       return cy.get('[data-test="transaction-list-filter-amount-range-button"]')
-               .contains('Amount: $0 - $1,000')
+    }
+    userBalance() {
+      return cy.get('[data-test="sidenav-user-balance"]')
     }
     selectUser() {
-      return cy.get('[data-test="user-list-item-t45AiwidW"]').find('span.MuiListItemText-primary').should('contain', 'Edgar Johns').click({force: true});
+      return cy.get('[data-test="user-list-item-t45AiwidW"]')
     }
-    validateButton() {
+    paymentButton() {
       return cy.get('[data-test="transaction-create-submit-payment"]');
     }
-    typeAmount() {
-      return cy.get('[placeholder="Amount"]').type('100');
+    typeAmountField() {
+      return cy.get('[placeholder="Amount"]')
     }
-    typeAddANote() {
-      return cy.get('[placeholder="Add a note"]').type('any text');
+    typeAddANoteField() {
+      return cy.get('[placeholder="Add a note"]')
     }
-    validateUserCredentials() {
+    userCredentials() {
       cy.get('img').should('have.attr', 'src', 'https://cypress-realworld-app-svgs.s3.amazonaws.com/t45AiwidW.svg')
       cy.contains('h2.MuiTypography-root', 'Edgar Johns');
       return this;
     }
-    validateCreateTransactionButton() {
-      cy.get('[data-test="new-transaction-create-another-transaction"]')
-      .should('have.attr', 'type', 'button')
-      .find('.MuiButton-label')
-      .should('contain', 'Create Another Transaction');
-      return this;
+    createTransactionButton() {
+      return cy.get('[data-test="new-transaction-create-another-transaction"]')
     }
-    validateReturnToAnotherButton() {
-      cy.get('[data-test="new-transaction-return-to-transactions"]')
-      .should('have.attr', 'href', '/')
-      .find('.MuiButton-label')
-      .should('contain', 'Return To Transactions');
-      return this;
+    returnToAnotherButton() {
+      return cy.get('[data-test="new-transaction-return-to-transactions"]')
     }
-    alertMessage() {
-      cy.get('h2.MuiTypography-gutterBottom').should('have.text', 'Paid "$0.00" for any. Not enough money');
+    alertTransactionMessage() {
+      return cy.get('h2.MuiTypography-gutterBottom')
     }
   }
   export default everyone;

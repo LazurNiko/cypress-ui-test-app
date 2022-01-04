@@ -14,12 +14,12 @@ describe("Signup suite", () => {
   });
 
   it("Sign up page should have title with logo, 'Sign up' text, 'Sign up' button, First Name, Last Name and text form fields", () => {
-    userSignup.signupUrl();
-    userSignup.userAvatar()
-    userSignup.signupTitle();
+    userSignup.signupUrl().should("include", "/signup");
+    userSignup.userAvatar().should("have.attr", "xmlns", "http://www.w3.org/2000/svg").and("be.visible");
+    userSignup.signupTitle().should("have.attr", "data-test", "signup-title").and("contain", "Sign Up");
     userSignup.submitBtn().click().should("be.disabled");
-    userSignup.validateFieldsPlaceholders();
-    userSignup.hypertextSignin();
+    userSignup.fieldsPlaceholders();
+    userSignup.hypertextSignin().should("contain", "Have an account? Sign In").and('be.visible');
   });
 
   it(`User can't sign up with blank fields - page shows messages for blank field`, () => {
@@ -29,7 +29,21 @@ describe("Signup suite", () => {
     userSignup.password().click();
     userSignup.passwordConfirm().click();
     userSignup.submitBtn().should("be.disabled").click({force: true});
-    userSignup.validateWarningFieldsMessages();
+    userSignup.warningFirstNameFieldMessage()
+              .should('have.css', 'color', 'rgb(244, 67, 54)')
+              .and("contain", "First Name is required");
+    userSignup.warningLastNameFieldMessage()
+              .should('have.css', 'color', 'rgb(244, 67, 54)')
+              .and("contain", "Last Name is required");
+    userSignup.warningUserNameFieldMessage()
+              .should('have.css', 'color', 'rgb(244, 67, 54)')
+              .and("contain", "Username is required");
+    userSignup.warningPasswordFieldMessage()
+              .should('have.css', 'color', 'rgb(244, 67, 54)')
+              .and("contain", "Enter your password");
+    userSignup.warningConfirmPasswordFieldMessage()
+              .should('have.css', 'color', 'rgb(244, 67, 54)')
+              .and("contain", "Confirm your password");
 });
 
   it("User with password length less then 4 characters shouldn't be able to sign up - page shows warning message", () => {
@@ -58,6 +72,9 @@ describe("Signup suite", () => {
     userSignup.password().type(user.password);
     userSignup.passwordConfirm().type(user.passwordConfirm);
     userSignup.submitBtn().should("not.be.disabled");
-    userSignup.validateButtonText();
+    userSignup.signUpButtonText()
+              .should("have.attr", "type", "submit")
+              .and("contain", "Sign Up")
+              .click();;
   });
 });
