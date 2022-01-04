@@ -5,7 +5,7 @@ describe('Everyone', () => {
   const Everyone = new everyone();
 
   beforeEach(() => {
-    Everyone.login();
+    cy.login();
   });
 
   it('"Everyone" page has logo, [New] "button, pages links, bell icon, users list and filter fields', () => {

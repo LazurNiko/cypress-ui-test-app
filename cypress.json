@@ -8,7 +8,8 @@
     "Friends.spec.js",
     "Mine.spec.js",
     "CalendarFilter.spec.js",
-    "AmountRangeFilter.spec.js"
+    "AmountRangeFilter.spec.js",
+    "API.spec.js"
   ],
   "ignoreTestFiles": [
     "**/1-getting-started/*.js",
