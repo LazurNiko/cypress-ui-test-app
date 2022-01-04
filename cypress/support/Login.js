@@ -30,6 +30,5 @@ Cypress.Commands.add('login', (username = 'Snow', password = '12345Qwert!') => {
                 const value = firstPart.substring(separator + 1)
                 cy.setCookie(name, value)
             })
-            return 
   });
 });
