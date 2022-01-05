@@ -6,13 +6,13 @@ class signup {
     return cy.get('[href="https://www.usertesting.com/plans"]');
   }
   signupUrl() {
-    return cy.url()
+    return cy.url();
   }
   userAvatar() {
-    return cy.get("svg")
+    return cy.get("svg");
   }
   signupTitle() {
-    return cy.get('[data-test="signup-title"]')
+    return cy.get('[data-test="signup-title"]');
   }
   submitBtn() {
     return cy.get('[data-test="signup-submit"]');
@@ -22,28 +22,28 @@ class signup {
   }
   fieldsPlaceholders() {
     return cy.get('[action="#"]').within(() => {
-            cy.get('fieldset').eq(0).find("span").should("contain", "First Name");
-            cy.get('fieldset').eq(1).find("span").should("contain", "Last Name");
-            cy.get('fieldset').eq(2).find("span").should("contain", "Username");
-            cy.get('fieldset').eq(3).find("span").should("contain", "Password");
-            cy.get('fieldset').eq(4).find("span").should("contain", "Confirm Password");
-          });
+      cy.get("fieldset").eq(0).find("span").should("contain", "First Name");
+      cy.get("fieldset").eq(1).find("span").should("contain", "Last Name");
+      cy.get("fieldset").eq(2).find("span").should("contain", "Username");
+      cy.get("fieldset").eq(3).find("span").should("contain", "Password");
+      cy.get("fieldset").eq(4).find("span").should("contain", "Confirm Password");
+    });
   }
   warningFirstNameFieldMessage() {
-      return cy.get('#firstName-helper-text')
-  };
+    return cy.get("#firstName-helper-text");
+  }
   warningLastNameFieldMessage() {
-      return cy.get('#lastName-helper-text')
-  };
+    return cy.get("#lastName-helper-text");
+  }
   warningUserNameFieldMessage() {
-      return cy.get('#username-helper-text')
-  };
+    return cy.get("#username-helper-text");
+  }
   warningPasswordFieldMessage() {
-      return cy.get('#password-helper-text')
-  };
+    return cy.get("#password-helper-text");
+  }
   warningConfirmPasswordFieldMessage() {
-      return cy.get('#confirmPassword-helper-text')
-  };
+    return cy.get("#confirmPassword-helper-text");
+  }
   firstName() {
     return cy.get("#firstName");
   }
@@ -60,31 +60,28 @@ class signup {
     return cy.get("#confirmPassword");
   }
   placeholder() {
-    return cy.get('fieldset');
+    return cy.get("fieldset");
   }
   warningFirstNameMessage() {
-    return cy.get('#firstName-helper-text')
+    return cy.get("#firstName-helper-text");
   }
   warningLastNameMessage() {
-    return cy.get('#lastName-helper-text')
+    return cy.get("#lastName-helper-text");
   }
   warningUserNameMessage() {
-    return cy.get('#username-helper-text')
+    return cy.get("#username-helper-text");
   }
   warningPasswordMessage() {
-    return cy.get('#password-helper-text');
-  }
-  warningPasswordMessage() {
-    return cy.get('#password-helper-text');
+    return cy.get("#password-helper-text");
   }
   warningConfirmPasswordMessage() {
-    return cy.get('#confirmPassword-helper-text');
+    return cy.get("#confirmPassword-helper-text");
   }
   hypertextSignin() {
-    return cy.get('[href="/signin"]')
+    return cy.get('[href="/signin"]');
   }
   signUpButtonText() {
-    return cy.get("button.MuiButton-containedPrimary")
+    return cy.get("button.MuiButton-containedPrimary");
   }
 }
 export default signup;

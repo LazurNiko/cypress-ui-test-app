@@ -11,6 +11,7 @@
     "AmountRangeFilter.spec.js",
     "API.spec.js"
   ],
+  "chromeWebSecurity": false,
   "ignoreTestFiles": [
     "**/1-getting-started/*.js",
     "**/2-advanced-examples/*.js"
