@@ -525,6 +525,17 @@
       "balance": 0,
       "createdAt": "2022-01-05T16:30:53.337Z",
       "modifiedAt": "2022-01-05T16:30:53.337Z"
+    },
+    {
+      "id": "56Q1bj2zs",
+      "uuid": "1b01118d-8cf3-471b-a385-45678de8e738",
+      "firstName": "Barry",
+      "lastName": "White",
+      "username": "Lorna38960",
+      "password": "$2a$10$T9goq6RX09Q1.JMxU1AtS.QzMAaLa4g8WpY81.F52EfD1d2xnjXIK",
+      "balance": 0,
+      "createdAt": "2022-01-05T16:45:10.352Z",
+      "modifiedAt": "2022-01-05T16:45:10.352Z"
     }
   ],
   "contacts": [

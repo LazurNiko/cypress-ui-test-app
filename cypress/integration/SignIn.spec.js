@@ -36,7 +36,7 @@ describe("Sign in suite", () => {
   it("Existing user should be able to login", function () {
     signIn.loginBtn().click().should("be.disabled");
     signIn.userName().type(this.testdata.username);
-    signIn.password().type(this.testdata.password);
+    signIn.password().type(this.testdata.password, { sensitive: true });
     signIn.checkboxText().should("contain", "Remember me");
     signIn.checkbox().should("be.not.checked").check();
     signIn.checkbox().should("be.checked").uncheck().should("not.be.checked");

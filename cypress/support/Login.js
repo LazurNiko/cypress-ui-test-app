@@ -32,6 +32,20 @@ Cypress.Commands.add("login", (username = "Snow", password = "12345Qwert!") => {
     });
   });
   cy.get("#username").type(Cypress.env("username"));
-  cy.get("#password").type(Cypress.env("password"));
+  cy.get("#password").type("12345Qwert!", { sensitive: true });
   cy.get('[data-test="signin-submit"]').click();
 });
+
+// Cypress.Commands.add('loginByForm', (username="Snow", password="12345Qwert!") => {
+//   cy.visit('/')
+
+//   return cy.request({
+//     method: 'POST',
+//     url: Cypress.env("apiserver") + "/login",
+//     form: true,
+//     body: {
+//       username,
+//       password,
+//     },
+//   })
+// })
