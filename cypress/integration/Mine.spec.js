@@ -8,7 +8,6 @@ describe("Mine", () => {
     cy.intercept('GET', Cypress.env('apiserver') + '/transactions', {
       fixture: 'pageMine.json'
     }).as('Mine');
-    
   });
 
   it('"Mine" page has logo, [Create a Transaction] button, pages links, bell icon, users list and filter fields', () => {
