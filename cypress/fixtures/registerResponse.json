@@ -1,0 +1,13 @@
+{
+    "user": {
+        "id": "ilKpUV3Cf",
+        "uuid": "06c8085e-4f16-4942-aba0-ec31763ece42",
+        "firstName": "Little",
+        "lastName": "Green",
+        "username": "Bag",
+        "password": "$2a$10$1KOYkggNugd0UBCsRLRzE.Q7MMxsroigoww.Vk5WpsxziH7AU5186",
+        "balance": 0,
+        "createdAt": "2022-01-06T11:21:12.968Z",
+        "modifiedAt": "2022-01-06T11:21:12.968Z"
+    }
+}

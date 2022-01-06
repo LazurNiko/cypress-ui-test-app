@@ -9,6 +9,9 @@ describe("Signup suite", () => {
       user = newUser;
     });
     cy.visit("/");
+    cy.intercept('POST', 'http://localhost:3001/usersww', {
+      fixture: 'registerResponse.json'
+    })
     userSignup.hyperlinkSignup().click();
   });
 
