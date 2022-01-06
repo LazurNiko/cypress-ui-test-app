@@ -24,7 +24,7 @@ class mine {
     return cy.get(".MuiListSubheader-sticky");
   }
   pageBody() {
-    return cy.get('[data-test="transaction-sender-Okdl_FPuQ"]');
+    return cy.get('[data-test="transaction-sender-RSTDWxZFg"]');
   }
   calendarFilter() {
     return cy.get('[data-test="transaction-list-filter-date-range-button"]');

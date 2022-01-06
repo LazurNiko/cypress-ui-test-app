@@ -13,7 +13,7 @@ describe("Signup suite", () => {
   });
 
   it("User should have an ability to create a new account", () => {
-    cy.intercept('POST', 'http://localhost:3001/users', {
+    cy.intercept('POST', Cypress.env('apiserver') + '/users', {
       fixture: 'registerResponse.json'
     }).as('Signup')
     userSignup.firstName().type(user.userFirstName);

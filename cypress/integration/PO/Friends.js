@@ -1,6 +1,6 @@
 class friends {
   friendsLink() {
-    cy.get('[href="/contacts"]').click();
+    return cy.get('[href="/contacts"]');
   }
   logo() {
     return cy.get('[xmlns="http://www.w3.org/2000/svg"]');

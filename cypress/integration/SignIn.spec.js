@@ -5,9 +5,6 @@ describe("Sign in suite", () => {
 
   beforeEach(function () {
     cy.visit("/");
-    cy.intercept('POST', 'http://localhost:3001/login', {
-      fixture: 'loginResponse.json'
-    })
     cy.fixture("credentials").then(function (testdata) {
       this.testdata = testdata;
     });
@@ -17,6 +14,20 @@ describe("Sign in suite", () => {
     username: "Chris",
     password: "12345qwert!",
   };
+
+  it("Existing user should be able to login", function () {
+    cy.intercept('POST', Cypress.env('apiserver') + '/login', {
+      fixture: 'loginResponse.json'
+    })
+    signIn.loginBtn().click().should("be.disabled");
+    signIn.userName().type(this.testdata.username);
+    signIn.password().type(this.testdata.password, { sensitive: true });
+    signIn.checkboxText().should("contain", "Remember me");
+    signIn.checkbox().should("be.not.checked").check();
+    signIn.checkbox().should("be.checked").uncheck().should("not.be.checked");
+    signIn.loginBtn().should("not.be.disabled");
+    cy.clickButton("Sign In");
+  });
 
   it("Sign in page has Logo, Sign in title, Sign up link and text form fields", () => {
     signIn.logo().should("have.attr", "xmlns", "http://www.w3.org/2000/svg").and("be.visible");
@@ -34,17 +45,6 @@ describe("Sign in suite", () => {
     signIn.password().click();
     signIn.errorMessage().should("contain", "Username is required");
     signIn.loginBtn().should("be.disabled");
-  });
-
-  it("Existing user should be able to login", function () {
-    signIn.loginBtn().click().should("be.disabled");
-    signIn.userName().type(this.testdata.username);
-    signIn.password().type(this.testdata.password, { sensitive: true });
-    signIn.checkboxText().should("contain", "Remember me");
-    signIn.checkbox().should("be.not.checked").check();
-    signIn.checkbox().should("be.checked").uncheck().should("not.be.checked");
-    signIn.loginBtn().should("not.be.disabled");
-    cy.clickButton("Sign In");
   });
 
   it(`User with unexciting username shouldn't be able to Log in`, function () {
