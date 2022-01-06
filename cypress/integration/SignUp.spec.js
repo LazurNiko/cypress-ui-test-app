@@ -22,7 +22,7 @@ describe("Signup suite", () => {
       .signupTitle()
       .should("have.attr", "data-test", "signup-title")
       .and("contain", "Sign Up");
-    cy.clickButton(userSignup.submitBtn()).should("be.disabled");
+      userSignup.submitBtn().click().should("be.disabled");
     userSignup.fieldsPlaceholders();
     userSignup.hypertextSignin().should("contain", "Have an account? Sign In").and("be.visible");
   });
@@ -85,7 +85,7 @@ describe("Signup suite", () => {
     userSignup.passwordConfirm().type(user.passwordConfirm);
     userSignup.signUpButtonText().should("have.attr", "type", "submit").and("contain", "Sign Up");
     userSignup.submitBtn().should("not.be.disabled");
-    cy.clickButton(userSignup.submitBtn());
+    cy.clickButton("Sign Up");
     userSignup.signupUrl().should("include", "/signin");
   });
 });

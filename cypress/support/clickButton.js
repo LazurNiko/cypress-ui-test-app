@@ -1,3 +1,3 @@
-Cypress.Commands.add("clickButton", () => {
-  cy.get("button").should("have.attr", "type", "submit").click();
+Cypress.Commands.add("clickButton", (label) => {
+  cy.get("button").contains('Sign').click();
 });

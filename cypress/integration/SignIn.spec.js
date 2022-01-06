@@ -41,20 +41,20 @@ describe("Sign in suite", () => {
     signIn.checkbox().should("be.not.checked").check();
     signIn.checkbox().should("be.checked").uncheck().should("not.be.checked");
     signIn.loginBtn().should("not.be.disabled");
-    cy.clickButton(signIn.loginBtn());
+    cy.clickButton("Sign In");
   });
 
   it(`User with unexciting username shouldn't be able to Log in`, function () {
     signIn.userName().type(unexcitingUser.username);
     signIn.password().type(unexcitingUser.password);
-    cy.clickButton(signIn.loginBtn());
+    cy.clickButton("Sign In");
     signIn.alertMessage().should("contain", "Username or password is invalid").and("be.visible");
   });
 
   it(`User with existing username and invalid password shouldn't be able to Log in`, function () {
     signIn.userName().type(this.testdata.username);
     signIn.password().type(unexcitingUser.password);
-    cy.clickButton(signIn.loginBtn());
+    cy.clickButton('Sign In');
     signIn.alertMessage().should("contain", "Username or password is invalid").and("be.visible");
   });
 });
