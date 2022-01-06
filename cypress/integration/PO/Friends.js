@@ -26,15 +26,6 @@ class friends {
   pageTitle() {
     return cy.get(".MuiListSubheader-sticky");
   }
-  pageBody() {
-    return cy.get('[data-test="empty-list-header"]');
-  }
-  transactionButton() {
-    return cy.contains(
-      '[data-test="transaction-list-empty-create-transaction-button"]',
-      "Create A Transaction"
-    );
-  }
   calendarFilter() {
     return cy.get('[data-test="transaction-list-filter-date-range-button"]');
   }

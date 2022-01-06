@@ -4,14 +4,13 @@ describe("Everyone", () => {
   const Everyone = new everyone();
 
   beforeEach(() => {
-    cy.intercept('POST', 'http://localhost:3001/login', {
-      fixture: 'loginResponse.json'
-    })
     cy.login();
   });
 
   it('"Everyone" page has logo, [New] "button, pages links, bell icon, users list and filter fields', () => {
-    
+    cy.intercept('GET', Cypress.env('apiserver') + '/transactions/public', {
+      fixture: 'pageEveryone.json'
+    }).as('Everyone');
     Everyone.logo().should("be.visible");
     Everyone.transactionButtonTop().should("be.visible").and("contain", " New");
     Everyone.notificationBell().should("be.visible").should("have.attr", "href", "/notifications");

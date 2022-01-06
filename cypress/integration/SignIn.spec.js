@@ -5,6 +5,9 @@ describe("Sign in suite", () => {
 
   beforeEach(function () {
     cy.visit("/");
+    cy.intercept('POST', 'http://localhost:3001/login', {
+      fixture: 'loginResponse.json'
+    })
     cy.fixture("credentials").then(function (testdata) {
       this.testdata = testdata;
     });

@@ -9,10 +9,22 @@ describe("Signup suite", () => {
       user = newUser;
     });
     cy.visit("/");
-    cy.intercept('POST', 'http://localhost:3001/usersww', {
-      fixture: 'registerResponse.json'
-    })
     userSignup.hyperlinkSignup().click();
+  });
+
+  it("User should have an ability to create a new account", () => {
+    cy.intercept('POST', 'http://localhost:3001/users', {
+      fixture: 'registerResponse.json'
+    }).as('Signup')
+    userSignup.firstName().type(user.userFirstName);
+    userSignup.lastName().type(user.userLastName);
+    userSignup.userName().type(user.username);
+    userSignup.password().type(user.password);
+    userSignup.passwordConfirm().type(user.passwordConfirm);
+    userSignup.signUpButtonText().should("have.attr", "type", "submit").and("contain", "Sign Up");
+    userSignup.submitBtn().should("not.be.disabled");
+    cy.clickButton("Sign Up");
+    userSignup.signupUrl().should("include", "/signin");
   });
 
   it("Sign up page should have title with logo, 'Sign up' text, 'Sign up' button, First Name, Last Name and text form fields", () => {
@@ -78,17 +90,5 @@ describe("Signup suite", () => {
     userSignup.passwordConfirm().type("123456qwert!");
     userSignup.warningConfirmPasswordMessage().should("contain", "Password does not match");
     userSignup.submitBtn().should("be.disabled");
-  });
-
-  it("User should have an ability to create a new account", () => {
-    userSignup.firstName().type(user.userFirstName);
-    userSignup.lastName().type(user.userLastName);
-    userSignup.userName().type(user.username);
-    userSignup.password().type(user.password);
-    userSignup.passwordConfirm().type(user.passwordConfirm);
-    userSignup.signUpButtonText().should("have.attr", "type", "submit").and("contain", "Sign Up");
-    userSignup.submitBtn().should("not.be.disabled");
-    cy.clickButton("Sign Up");
-    userSignup.signupUrl().should("include", "/signin");
   });
 });
