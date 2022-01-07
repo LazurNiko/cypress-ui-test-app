@@ -1,0 +1,14 @@
+{
+    "transaction": {
+        "id": "kbJbtjGCi",
+        "uuid": "57937dfd-8495-4eb3-a1dd-52076f152a9e",
+        "amount": 10000,
+        "description": "any",
+        "receiverId": "t45AiwidW",
+        "senderId": "O56_53E-k",
+        "status": "pending",
+        "requestStatus": "pending",
+        "createdAt": "2022-01-07T15:58:11.005Z",
+        "modifiedAt": "2022-01-07T15:58:11.005Z"
+    }
+}

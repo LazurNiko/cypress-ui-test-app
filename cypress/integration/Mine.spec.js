@@ -11,7 +11,7 @@ describe("Mine", () => {
   });
 
   it('"Mine" page has logo, [Create a Transaction] button, pages links, bell icon, users list and filter fields', () => {
-    minePage.mainPageMineLink().click();
+    cy.clickButton('Mine');
     minePage.logo().should("be.visible");
     minePage.transactionButtonTop().should("be.visible").and("contain", " New");
     minePage.notificationBell().should("be.visible").should("have.attr", "href", "/notifications");

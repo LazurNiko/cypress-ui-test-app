@@ -1,7 +1,4 @@
 class signup {
-  hyperlinkSignup() {
-    return cy.get("[href='/signup']");
-  }
   signUpBtn() {
     return cy.get('[href="https://www.usertesting.com/plans"]');
   }

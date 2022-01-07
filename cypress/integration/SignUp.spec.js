@@ -9,7 +9,7 @@ describe("Signup suite", () => {
       user = newUser;
     });
     cy.visit("/");
-    userSignup.hyperlinkSignup().click();
+    cy.clickButton("Don't have an account? Sign Up");
   });
 
   it("User should have an ability to create a new account", () => {

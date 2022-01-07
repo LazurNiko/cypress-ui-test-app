@@ -9,7 +9,8 @@
     "Mine.spec.js",
     "CalendarFilter.spec.js",
     "AmountRangeFilter.spec.js",
-    "API.spec.js"
+    "API.spec.js",
+    "successfullTransaction.spec.js"
   ],
   "chromeWebSecurity": false,
   "ignoreTestFiles": [
