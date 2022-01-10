@@ -1,4 +1,7 @@
 class sidebar {
+  linkUrl() {
+    cy.url();
+  }
   sidebarMenu() {
     return cy.get(".MuiDrawer-root.MuiDrawer-docked");
   }

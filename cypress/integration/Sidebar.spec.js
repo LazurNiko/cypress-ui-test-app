@@ -3,7 +3,7 @@ import sidebar from "./PO/Sidebar";
 describe("Sidebar", () => {
   const sideBar = new sidebar();
 
-  before(() => {
+  beforeEach(() => {
     cy.login();
   });
 
@@ -30,4 +30,39 @@ describe("Sidebar", () => {
         sideBar.logoutLink().should("be.visible").contains("Logout");
       });
   });
+
+  it('User be able to edit profile settings at "User Settings" page by clicking "My account" link in sidebar', () => {
+
+    sideBar.sidebarMenu().should('be.visible');
+    cy.clickButton('My Account');
+    sideBar.linkUrl().should('include', '/user/settings');
+  });
+
+  it('User can create a new bank account at "Bank Accounts" page by clicking it link in sidebar', () => {
+
+    cy.clickButton('Bank Accounts');
+    sideBar.linkUrl().should('include', '/bankaccounts');
+  });
+
+  it('User can view notifications by clicking "Notifications" link in sidebar', () => {
+
+    cy.clickButton('Notifications');
+    sideBar.linkUrl().should('include', '/notifications');
+  });
+
+  it('When click "Home" link in sidebar - "Everyone" page opens"', () => {
+    cy.intercept('GET', Cypress.env('apiserver') + '/transactions/public', {
+      fixture: 'pageEveryone.json'
+    }).as('Everyone');
+
+    cy.clickButton('Home');
+    sideBar.linkUrl().should('include', '/');
+  });
+
+  it('User be able to logout by clicking "Logout" link in sidebar', () => {
+    
+    cy.clickButton('Logout');
+    sideBar.linkUrl().should('include', '/signin');
+  });
+
 });
