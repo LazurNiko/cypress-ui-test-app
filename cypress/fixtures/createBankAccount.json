@@ -1,0 +1,28 @@
+{
+  "data": {
+      "listBankAccount": [
+          {
+              "id": "dCUB3VQeI",
+              "uuid": "6c7d42c1-27d9-4a4c-9c0d-5df5c661df62",
+              "userId": "wxx6Qg7KR",
+              "bankName": "Gates",
+              "accountNumber": "123456789",
+              "routingNumber": "123456789",
+              "isDeleted": false,
+              "createdAt": "1641822356290",
+              "modifiedAt": "1641822356290"
+          },
+          {
+              "id": "jZCKRCJma",
+              "uuid": "98c9b3bb-1dab-4344-bcf8-b5788df6c3a6",
+              "userId": "wxx6Qg7KR",
+              "bankName": "SomeName",
+              "accountNumber": "123456789",
+              "routingNumber": "123456789",
+              "isDeleted": false,
+              "createdAt": "1641824995570",
+              "modifiedAt": "1641824995570"
+          }
+      ]
+  }
+}

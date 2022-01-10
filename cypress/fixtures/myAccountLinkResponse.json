@@ -1,15 +1,15 @@
 {
-    "user": {
-        "id": "BN6anCFFF",
-        "uuid": "7ed572e0-1863-4972-bc15-b3b687e945ee",
-        "firstName": "John",
-        "lastName": "Gates",
-        "username": "Snow",
-        "password": "$2a$10$gGgOzaEqlcZ90pXJEHsgk.Vlt2CyQCR5tYOc23MMecKdzIiqB8P4q",
-        "email": "Snow@mail.ru",
-        "phoneNumber": "12345678910",
-        "balance": 0,
-        "createdAt": "2022-01-09T22:32:59.372Z",
-        "modifiedAt": "2022-01-09T22:32:59.372Z"
-    }
+  "user": {
+      "id": "wxx6Qg7KR",
+      "uuid": "096a6bac-4d52-4c58-976c-30f28b45d4aa",
+      "firstName": "John1",
+      "lastName": "Gates1",
+      "username": "Snow",
+      "password": "$2a$10$fU/Izl4x5CnGQJZML3bUl.kJGdFuKnMR1qIiYbMCTU/WQxsRXqMm.",
+      "email": "Snow@mail.com",
+      "phoneNumber": "12345678910",
+      "balance": 0,
+      "createdAt": "2022-01-10T13:45:30.854Z",
+      "modifiedAt": "2022-01-10T13:45:30.854Z"
+  }
 }

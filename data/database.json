@@ -74,6 +74,19 @@
       "balance": 75369,
       "createdAt": "2020-02-11T21:26:46.510Z",
       "modifiedAt": "2020-05-21T15:15:33.944Z"
+    },
+    {
+      "id": "wxx6Qg7KR",
+      "uuid": "096a6bac-4d52-4c58-976c-30f28b45d4aa",
+      "firstName": "John",
+      "lastName": "Gates",
+      "username": "Snow",
+      "password": "$2a$10$fU/Izl4x5CnGQJZML3bUl.kJGdFuKnMR1qIiYbMCTU/WQxsRXqMm.",
+      "email": "Snow@mail.com",
+      "phoneNumber": "12345678910",
+      "balance": 0,
+      "createdAt": "2022-01-10T13:45:30.854Z",
+      "modifiedAt": "2022-01-10T13:45:30.854Z"
     }
   ],
   "contacts": [
@@ -253,6 +266,50 @@
       "isDeleted": false,
       "createdAt": "2019-09-30T14:20:07.043Z",
       "modifiedAt": "2020-05-21T22:40:28.910Z"
+    },
+    {
+      "id": "dCUB3VQeI",
+      "uuid": "6c7d42c1-27d9-4a4c-9c0d-5df5c661df62",
+      "userId": "wxx6Qg7KR",
+      "bankName": "Gates",
+      "accountNumber": "123456789",
+      "routingNumber": "123456789",
+      "isDeleted": false,
+      "createdAt": "2022-01-10T13:45:56.290Z",
+      "modifiedAt": "2022-01-10T13:45:56.290Z"
+    },
+    {
+      "id": "jZCKRCJma",
+      "uuid": "98c9b3bb-1dab-4344-bcf8-b5788df6c3a6",
+      "userId": "wxx6Qg7KR",
+      "bankName": "werewr",
+      "accountNumber": "555555555",
+      "routingNumber": "252555555",
+      "isDeleted": false,
+      "createdAt": "2022-01-10T14:29:55.570Z",
+      "modifiedAt": "2022-01-10T14:29:55.570Z"
+    },
+    {
+      "id": "cS87TAptM",
+      "uuid": "d45fbc2b-d2c3-4d1a-b685-597b4e944477",
+      "userId": "wxx6Qg7KR",
+      "bankName": "464564",
+      "accountNumber": "565675777",
+      "routingNumber": "464564565",
+      "isDeleted": false,
+      "createdAt": "2022-01-10T14:42:02.015Z",
+      "modifiedAt": "2022-01-10T14:42:02.015Z"
+    },
+    {
+      "id": "q4Serd6Oj",
+      "uuid": "c752379c-10d7-40b1-b48b-bd71eafa1548",
+      "userId": "wxx6Qg7KR",
+      "bankName": "Sibyl",
+      "accountNumber": "123456789",
+      "routingNumber": "123456789",
+      "isDeleted": false,
+      "createdAt": "2022-01-10T14:49:56.815Z",
+      "modifiedAt": "2022-01-10T14:49:56.815Z"
     }
   ],
   "transactions": [

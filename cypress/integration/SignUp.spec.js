@@ -13,9 +13,9 @@ describe("Signup suite", () => {
   });
 
   it("User should have an ability to create a new account", () => {
-    cy.intercept('POST', Cypress.env('apiserver') + '/users', {
-      fixture: 'registerResponse.json'
-    }).as('Signup')
+    cy.intercept("POST", Cypress.env("apiserver") + "/users", {
+      fixture: "registerResponse.json",
+    }).as("Signup");
     userSignup.firstName().type(user.userFirstName);
     userSignup.lastName().type(user.userLastName);
     userSignup.userName().type(user.username);
@@ -37,7 +37,7 @@ describe("Signup suite", () => {
       .signupTitle()
       .should("have.attr", "data-test", "signup-title")
       .and("contain", "Sign Up");
-      userSignup.submitBtn().click().should("be.disabled");
+    userSignup.submitBtn().click().should("be.disabled");
     userSignup.fieldsPlaceholders();
     userSignup.hypertextSignin().should("contain", "Have an account? Sign In").and("be.visible");
   });

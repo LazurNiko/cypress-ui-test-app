@@ -1,9 +1,33 @@
 class sidebar {
   linkUrl() {
-    cy.url();
+    return cy.url();
   }
   sidebarMenu() {
     return cy.get(".MuiDrawer-root.MuiDrawer-docked");
+  }
+  createNewTransactionButton() {
+    return cy.get('[href="/bankaccounts/new"]')
+  }
+  editFirstName() {
+    return cy.get('[placeholder="First Name"]');
+  }
+  editLastName() {
+    return cy.get('[placeholder="Last Name"]');
+  }
+  editEmail() {
+    return cy.get('[placeholder="Email"]');
+  }
+  editPhoneNumber() {
+    return cy.get('[placeholder="Phone Number"]');
+  }
+  fieldBankName() {
+    return cy.get('[placeholder="Bank Name"]');
+  }
+  fieldRoutingNumber() {
+    return cy.get('[placeholder="Routing Number"]');
+  }
+  fieldAccountNumber() {
+    return cy.get('[placeholder="Account Number"]');
   }
   avatar() {
     return cy.get(".MuiSvgIcon-root.MuiAvatar-fallback");

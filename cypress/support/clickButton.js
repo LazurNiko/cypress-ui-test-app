@@ -1,5 +1,3 @@
 Cypress.Commands.add("clickButton", (label) => {
-    cy.get('button,a').contains(label).click();
-  })
-    
-
+  cy.get("button,a,span").contains(label).click();
+});

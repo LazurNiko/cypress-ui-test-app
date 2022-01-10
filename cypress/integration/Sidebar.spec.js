@@ -2,9 +2,13 @@ import sidebar from "./PO/Sidebar";
 
 describe("Sidebar", () => {
   const sideBar = new sidebar();
+  let account;
 
   beforeEach(() => {
     cy.login();
+    cy.task("newBankAccount").then((newBankAccount) => {
+      account = newBankAccount;
+    });
   });
 
   it("Sidebar has avatar, username, account balance and menu list", () => {
@@ -32,37 +36,53 @@ describe("Sidebar", () => {
   });
 
   it('User be able to edit profile settings at "User Settings" page by clicking "My account" link in sidebar', () => {
-
-    sideBar.sidebarMenu().should('be.visible');
-    cy.clickButton('My Account');
-    sideBar.linkUrl().should('include', '/user/settings');
+    cy.intercept("GET", Cypress.env("apiserver") + "/checkAuth", {
+      fixture: "myAccountLinkResponse.json",
+    }).as("editedAccount");
+    sideBar.sidebarMenu().should("be.visible");
+    cy.clickButton("My Account");
+    sideBar.linkUrl().should("include", "/user/settings");
+    sideBar.editFirstName().clear().type("John1");
+    sideBar.editLastName().clear().type("Gates1");
+    sideBar.editEmail().clear().type("Snow@mail.com");
+    sideBar.editPhoneNumber().clear().type("12345678910");
+    cy.clickButton("Save");
+    sideBar.username().should("contain", "John1");
+    sideBar.editFirstName().clear().type("John");
+    sideBar.editLastName().clear().type("Gates");
+    cy.clickButton("Save");
+    sideBar.username().should("contain", "John");
   });
 
-  it('User can create a new bank account at "Bank Accounts" page by clicking it link in sidebar', () => {
-
-    cy.clickButton('Bank Accounts');
-    sideBar.linkUrl().should('include', '/bankaccounts');
+  it.only('User can create a new bank account at "Bank Accounts" page by clicking it link in sidebar', () => {
+    cy.intercept("POST", Cypress.env("apiserver") + "/graphql", {
+      fixture: "myAccountLinkResponse.json",
+    }).as("createdBankAccount");
+    cy.clickButton("Bank Accounts");
+    sideBar.linkUrl().should("include", "/bankaccounts");
+    sideBar.createNewTransactionButton().click({ force: true });
+    sideBar.fieldBankName().type(account.bankName);
+    sideBar.fieldRoutingNumber().type(account.routingNumber);
+    sideBar.fieldAccountNumber().type(account.accountNumber);
+    cy.clickButton("Save");
   });
 
   it('User can view notifications by clicking "Notifications" link in sidebar', () => {
-
-    cy.clickButton('Notifications');
-    sideBar.linkUrl().should('include', '/notifications');
+    cy.clickButton("Notifications");
+    sideBar.linkUrl().should("include", "/notifications");
   });
 
   it('When click "Home" link in sidebar - "Everyone" page opens"', () => {
-    cy.intercept('GET', Cypress.env('apiserver') + '/transactions/public', {
-      fixture: 'pageEveryone.json'
-    }).as('Everyone');
+    cy.intercept("GET", Cypress.env("apiserver") + "/transactions/public", {
+      fixture: "pageEveryone.json",
+    }).as("Everyone");
 
-    cy.clickButton('Home');
-    sideBar.linkUrl().should('include', '/');
+    cy.clickButton("Home");
+    sideBar.linkUrl().should("include", "/");
   });
 
   it('User be able to logout by clicking "Logout" link in sidebar', () => {
-    
-    cy.clickButton('Logout');
-    sideBar.linkUrl().should('include', '/signin');
+    cy.clickButton("Logout");
+    sideBar.linkUrl().should("include", "/signin");
   });
-
 });

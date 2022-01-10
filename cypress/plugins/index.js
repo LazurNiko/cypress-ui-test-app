@@ -31,4 +31,15 @@ module.exports = (on, config) => {
       return user;
     },
   });
+
+  on("task", {
+    newBankAccount() {
+      let account = {
+        bankName: faker.name.firstName(),
+        routingNumber: "123456789",
+        accountNumber: "123456789",
+      };
+      return account;
+    },
+  });
 };

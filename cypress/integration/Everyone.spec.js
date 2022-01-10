@@ -4,10 +4,10 @@ describe("Everyone", () => {
   const Everyone = new everyone();
 
   it('"Everyone" page has logo, [New] "button, pages links, bell icon, users list and filter fields', () => {
-    cy.login()
-    cy.intercept('GET', Cypress.env('apiserver') + '/transactions/public', {
-      fixture: 'pageEveryone.json'
-    }).as('Everyone');
+    cy.login();
+    cy.intercept("GET", Cypress.env("apiserver") + "/transactions/public", {
+      fixture: "pageEveryone.json",
+    }).as("Everyone");
     Everyone.logo().should("be.visible");
     Everyone.transactionButtonTop().should("be.visible").and("contain", " New");
     Everyone.notificationBell().should("be.visible").should("have.attr", "href", "/notifications");
@@ -53,12 +53,12 @@ describe("Everyone", () => {
   });
 
   it('User be able to create payment request if account balance is not "$0.00', () => {
-    cy.intercept('POST', Cypress.env('apiserver') + '/transactions', {
-      fixture: 'successfullPayment.json'
-    }).as('successfullPayment');
-  cy.login();
+    cy.intercept("POST", Cypress.env("apiserver") + "/transactions", {
+      fixture: "successfulPayment.json",
+    }).as("successfulPayment");
+    cy.login();
     Everyone.userBalance().should("contain", "$0.00");
-    cy.clickButton('New');
+    cy.clickButton("New");
     Everyone.selectUser()
       .scrollIntoView()
       .find("span.MuiListItemText-primary")
@@ -77,9 +77,6 @@ describe("Everyone", () => {
       .should("have.attr", "href", "/")
       .find(".MuiButton-label")
       .should("contain", "Return To Transactions");
-    Everyone.alertTransactionMessage().should(
-      "have.text",
-      'Edgar JohnsPaid $100.00 for any text'
-    );
+    Everyone.alertTransactionMessage().should("have.text", "Edgar JohnsPaid $100.00 for any text");
   });
 });
