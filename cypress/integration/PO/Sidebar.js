@@ -14,6 +14,15 @@ class sidebar {
   editLastName() {
     return cy.get('[placeholder="Last Name"]');
   }
+  selectToDelete() {
+    return cy.get('.MuiGrid-justify-content-xs-space-between').within(() => {
+      cy.get("p.MuiTypography-gutterBottom").eq(0).should("contain", "Gates");
+      cy.get('[data-test="bankaccount-delete"]').find('.MuiButton-label').should("contain", "Delete").click();
+    });
+  }
+  deletedAccount() {
+    return cy.get('.MuiGrid-justify-content-xs-space-between')
+  }
   editEmail() {
     return cy.get('[placeholder="Email"]');
   }
@@ -28,6 +37,9 @@ class sidebar {
   }
   fieldAccountNumber() {
     return cy.get('[placeholder="Account Number"]');
+  }
+  notificationsList() {
+    return cy.get(".MuiGrid-grid-xs-12 > .MuiPaper-root");
   }
   avatar() {
     return cy.get(".MuiSvgIcon-root.MuiAvatar-fallback");

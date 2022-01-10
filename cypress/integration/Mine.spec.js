@@ -5,13 +5,13 @@ describe("Mine", () => {
 
   before(() => {
     cy.login();
-    cy.intercept('GET', Cypress.env('apiserver') + '/transactions', {
-      fixture: 'pageMine.json'
-    }).as('Mine');
+    cy.intercept("GET", Cypress.env("apiserver") + "/transactions", {
+      fixture: "pageMine.json",
+    }).as("Mine");
   });
 
   it('"Mine" page has logo, [Create a Transaction] button, pages links, bell icon, users list and filter fields', () => {
-    cy.clickButton('Mine');
+    cy.clickButton("Mine");
     minePage.logo().should("be.visible");
     minePage.transactionButtonTop().should("be.visible").and("contain", " New");
     minePage.notificationBell().should("be.visible").should("have.attr", "href", "/notifications");

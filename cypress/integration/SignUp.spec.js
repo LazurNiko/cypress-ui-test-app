@@ -24,6 +24,7 @@ describe("Signup suite", () => {
     userSignup.signUpButtonText().should("have.attr", "type", "submit").and("contain", "Sign Up");
     userSignup.submitBtn().should("not.be.disabled");
     cy.clickButton("Sign Up");
+    cy.wait("@Signup").its("response.statusCode").should("eq", 200);
     userSignup.signupUrl().should("include", "/signin");
   });
 

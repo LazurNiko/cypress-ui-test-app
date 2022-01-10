@@ -5,13 +5,13 @@ describe("Friends", () => {
 
   before(() => {
     cy.login();
-    cy.intercept('GET', Cypress.env('apiserver') + '/transactions/contacts', {
-      fixture: 'pageFriends.json'
-    }).as('Friends');
+    cy.intercept("GET", Cypress.env("apiserver") + "/transactions/contacts", {
+      fixture: "pageFriends.json",
+    }).as("Friends");
   });
 
   it('"Friends" page has logo, [Create a Transaction] button, pages links, bell icon, users list and filter fields', () => {
-    cy.clickButton('Friends');
+    cy.clickButton("Friends");
     Friends.logo().should("be.visible");
     Friends.transactionButtonTop().should("be.visible").and("contain", " New");
     Friends.notificationBell().should("be.visible").should("have.attr", "href", "/notifications");
