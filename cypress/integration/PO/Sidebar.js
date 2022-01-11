@@ -14,11 +14,8 @@ class sidebar {
   editLastName() {
     return cy.get('[placeholder="Last Name"]');
   }
-  selectToDelete() {
-    return cy.get('.MuiGrid-justify-content-xs-space-between').within(() => {
-      cy.get("p.MuiTypography-gutterBottom").eq(0).should("contain", "Gates");
-      cy.get('[data-test="bankaccount-delete"]').find('.MuiButton-label').should("contain", "Delete").click();
-    });
+  existingBankAccount() {
+    return cy.get('[data-test="bankaccount-list-item-cZzL9OE3p"] > .MuiGrid-container');
   }
   deletedAccount() {
     return cy.get('.MuiGrid-justify-content-xs-space-between')

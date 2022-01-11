@@ -8,9 +8,7 @@
     "Friends.spec.js",
     "Mine.spec.js",
     "CalendarFilter.spec.js",
-    "AmountRangeFilter.spec.js",
-    "API.spec.js",
-    "successfullTransaction.spec.js"
+    "AmountRangeFilter.spec.js"
   ],
   "chromeWebSecurity": false,
   "ignoreTestFiles": [

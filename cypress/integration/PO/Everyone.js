@@ -69,7 +69,7 @@ class everyone {
     return cy.get('[data-test="sidenav-user-balance"]');
   }
   selectUser() {
-    return cy.get('[data-test="user-list-item-t45AiwidW"]');
+    return cy.get('[data-test="user-list-item-qywYp6hS0U"]');
   }
   paymentButton() {
     return cy.get('[data-test="transaction-create-submit-payment"]');
@@ -84,9 +84,9 @@ class everyone {
     cy.get("img").should(
       "have.attr",
       "src",
-      "https://cypress-realworld-app-svgs.s3.amazonaws.com/t45AiwidW.svg"
+      "https://cypress-realworld-app-svgs.s3.amazonaws.com/qywYp6hS0U.svg"
     );
-    cy.contains("h2.MuiTypography-root", "Edgar Johns");
+    cy.contains("h2.MuiTypography-root", "Arely Kertzmann");
     return this;
   }
   createTransactionButton() {

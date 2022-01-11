@@ -24,5 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import "./Login";
+import "./createBankAccount";
 import "./clickButton";
 import "./type";

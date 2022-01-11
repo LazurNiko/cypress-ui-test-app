@@ -32,5 +32,25 @@ class signin {
   hypertextSignUp() {
     return cy.get('[data-test="signup"]');
   }
+  modalWindow() {
+    cy.get(".MuiDialog-container.MuiDialog-scrollPaper").contains(
+      "h2.MuiTypography-h6",
+      "Get Started with Real World App"
+    );
+    cy.contains(
+      "p.MuiTypography-body1",
+      "Real World App requires a Bank Account to perform transactions."
+    );
+    return this;
+  }
+  fieldNewBankName() {
+    return cy.get('[placeholder="Bank Name"]');
+  }
+  fieldNewRoutingNumber() {
+    return cy.get('[placeholder="Routing Number"]');
+  }
+  fieldNewAccountNumber() {
+    return cy.get('[placeholder="Account Number"]');
+  }
 }
 export default signin;

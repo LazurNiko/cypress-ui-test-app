@@ -13,9 +13,6 @@ describe("Signup suite", () => {
   });
 
   it("User should have an ability to create a new account", () => {
-    cy.intercept("POST", Cypress.env("apiserver") + "/users", {
-      fixture: "registerResponse.json",
-    }).as("Signup");
     userSignup.firstName().type(user.userFirstName);
     userSignup.lastName().type(user.userLastName);
     userSignup.userName().type(user.username);
@@ -24,7 +21,6 @@ describe("Signup suite", () => {
     userSignup.signUpButtonText().should("have.attr", "type", "submit").and("contain", "Sign Up");
     userSignup.submitBtn().should("not.be.disabled");
     cy.clickButton("Sign Up");
-    cy.wait("@Signup").its("response.statusCode").should("eq", 200);
     userSignup.signupUrl().should("include", "/signin");
   });
 

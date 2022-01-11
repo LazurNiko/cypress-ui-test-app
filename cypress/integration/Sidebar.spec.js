@@ -2,13 +2,10 @@ import sidebar from "./PO/Sidebar";
 
 describe("Sidebar", () => {
   const sideBar = new sidebar();
-  let account;
 
   beforeEach(() => {
+    cy.clearCookie("connect.sid");
     cy.login();
-    cy.task("newBankAccount").then((newBankAccount) => {
-      account = newBankAccount;
-    });
   });
 
   it("Sidebar has avatar, username, account balance and menu list", () => {
@@ -52,6 +49,7 @@ describe("Sidebar", () => {
     sideBar.editLastName().clear().type("Gates");
     cy.clickButton("Save");
     sideBar.username().should("contain", "John");
+    cy.clickButton("Logout");
   });
 
   it('User can create a new bank account at "Bank Accounts" page by clicking it link in sidebar', () => {
@@ -61,9 +59,9 @@ describe("Sidebar", () => {
     cy.clickButton("Bank Accounts");
     sideBar.linkUrl().should("include", "/bankaccounts");
     sideBar.createNewTransactionButton().click({ force: true });
-    sideBar.fieldBankName().type(account.bankName);
-    sideBar.fieldRoutingNumber().type(account.routingNumber);
-    sideBar.fieldAccountNumber().type(account.accountNumber);
+    sideBar.fieldBankName().type("Gates");
+    sideBar.fieldRoutingNumber().type("123456789");
+    sideBar.fieldAccountNumber().type("123456789");
     cy.clickButton("Save");
     cy.wait("@createdBankAccount").its("response.statusCode").should("eq", 200);
   });
@@ -74,7 +72,8 @@ describe("Sidebar", () => {
       fixture: "deleteAccount.json",
     }).as("deletedBankAccount");
     sideBar.linkUrl().should("include", "/bankaccounts");
-    sideBar.selectToDelete();
+    sideBar.existingBankAccount().should("contain", "Gates");
+    sideBar.existingBankAccount().contains("Delete").click();
     sideBar.deletedAccount().should("contain", "Gates (Deleted)");
     cy.intercept("/graphql", (req) => {
       req.reply((res) => {

@@ -15,7 +15,18 @@ describe("Sign in suite", () => {
     password: "12345qwert!",
   };
 
-  it("Existing user should be able to login", function () {
+  it(`New user without bank account should create a bank account after login"`, () => {
+    cy.login();
+    cy.clearCookie('connect.sid');
+    signIn.modalWindow();
+    cy.clickButton("Next");
+    signIn.fieldNewBankName().type("Gates");
+    signIn.fieldNewRoutingNumber().type("123456789");
+    signIn.fieldNewAccountNumber().type("123456789");
+    cy.clickButton("Save");
+  });
+
+  it("Existing user with bank account should be able to login", function () {
     cy.intercept("POST", Cypress.env("apiserver") + "/login", {
       fixture: "loginResponse.json",
     }).as("successfulLogin");

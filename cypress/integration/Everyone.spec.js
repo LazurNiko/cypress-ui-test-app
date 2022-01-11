@@ -31,7 +31,7 @@ describe("Everyone", () => {
     Everyone.selectUser()
       .scrollIntoView()
       .find("span.MuiListItemText-primary")
-      .should("contain", "Edgar Johns")
+      .should("contain", "Arely Kertzmann")
       .click({ force: true });
     Everyone.paymentButton().should("contain", "Pay").and("be.disabled");
     Everyone.typeAmountField().type("100");
@@ -62,7 +62,7 @@ describe("Everyone", () => {
     Everyone.selectUser()
       .scrollIntoView()
       .find("span.MuiListItemText-primary")
-      .should("contain", "Edgar Johns")
+      .should("contain", "Arely Kertzmann")
       .click({ force: true });
     Everyone.paymentButton().should("contain", "Pay").and("be.disabled");
     Everyone.typeAmountField().type("100");
@@ -77,6 +77,7 @@ describe("Everyone", () => {
       .should("have.attr", "href", "/")
       .find(".MuiButton-label")
       .should("contain", "Return To Transactions");
-    Everyone.alertTransactionMessage().should("have.text", "Edgar JohnsPaid $100.00 for any text");
+    Everyone.alertTransactionMessage().should("have.text", "Arely KertzmannPaid $100.00 for any text");
+    cy.clickButton("Logout");
   });
 });
